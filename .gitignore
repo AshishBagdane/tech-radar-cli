@@ -1,0 +1,106 @@
+# Rust specific ignores
+/target/
+**/*.rs.bk
+Cargo.lock
+*.pdb
+
+# Build artifacts
+/build/
+/dist/
+/out/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# IDE - VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IDE - IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IDE - Rust Analyzer
+rust-project.json
+
+# Debug logs
+debug/
+debug.log
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+*.backup
+
+# Test coverage
+coverage/
+*.profraw
+*.profdata
+
+# Documentation
+/doc/
+/docs/_site/
+/docs/.jekyll-cache/
+
+# Dependencies
+/vendor/
+/.cargo/
+
+# CLI specific
+cli.config.toml
+.cli-history
+.cache/
+
+# Release artifacts
+*.tar.gz
+*.zip
+*.deb
+*.rpm
+*.msi
+*.pkg
+
+# Test artifacts
+/tests/tmp/
+/tests/fixtures/generated/
+
+# Generated documentation
+/target/doc/
+/target/debug/
+/target/release/
+
+# Platform specific
+## Windows
+desktop.ini
+## Linux
+.directory
+## macOS
+.AppleDouble
+.LSOverride
