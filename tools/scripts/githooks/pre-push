@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "Running pre-push checks..."
+
+# Format check
+echo "Checking formatting..."
+cargo fmt -- --check || exit 1
+
+# Run clippy
+echo "Running clippy..."
+cargo clippy -- -D warnings || exit 1
+
+# Run tests
+echo "Running tests..."
+cargo test || exit 1
+
+# Security audit
+echo "Running security audit..."
+cargo audit || exit 1
+
+# Check for outdated dependencies
+echo "Checking for outdated dependencies..."
+cargo outdated || exit 1
+
+# Check for unused dependencies
+echo "Checking for unused dependencies..."
+cargo udeps || exit 1
+
+echo "All checks passed!"

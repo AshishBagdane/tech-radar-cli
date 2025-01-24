@@ -1,0 +1,47 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+      - id: mixed-line-ending
+
+  - repo: local
+    hooks:
+      - id: rustfmt
+        name: Rust formatting
+        entry: cargo fmt --
+        language: system
+        files: \.rs$
+        pass_filenames: false
+
+      - id: clippy
+        name: Rust linting
+        entry: cargo clippy -- -D warnings
+        language: system
+        files: \.rs$
+        pass_filenames: false
+
+      - id: cargo-test
+        name: Rust tests
+        entry: cargo test
+        language: system
+        files: \.rs$
+        pass_filenames: false
+
+      - id: cargo-audit
+        name: Security audit
+        entry: cargo audit
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
+
+      - id: cargo-outdated
+        name: Check outdated dependencies
+        entry: cargo outdated
+        language: system
+        pass_filenames: false
+        stages: [pre-push]

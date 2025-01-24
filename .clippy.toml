@@ -1,0 +1,5 @@
+cognitive-complexity-threshold = 15
+doc-valid-idents = ["RFC", "API", "CLI", "TUI"]
+too-many-arguments-threshold = 5
+type-complexity-threshold = 150
+too-many-lines-threshold = 100
